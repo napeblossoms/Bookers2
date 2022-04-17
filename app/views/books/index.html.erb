@@ -1,2 +1,22 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Books</h1>
+
+<table>
+ <thead>
+  <tr>
+   <th>Title</th>
+   <th>Opinion</th>
+   <th></th>
+  </tr>
+ </thead>
+ <% @books.each do |book| %>
+ <tbody>
+  <tr>
+   <td class="a"><%= book.title %></td>
+   <td class="b"><%= book.body %></td>
+   <td><%= link_to "Destroy", book_path(book.id), method: :delete %></td>
+  </tr>
+ </tbody>
+
+<% end %>
+</table>
+
