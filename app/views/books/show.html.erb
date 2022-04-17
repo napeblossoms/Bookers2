@@ -12,6 +12,7 @@
   <tr>
    <td class="a"><%= @book.title %></td>
    <td class="b"><%= @book.body %></td>
+   <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
    <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>
   </tr>
  </tbody>

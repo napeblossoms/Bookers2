@@ -11,9 +11,8 @@
  <% @books.each do |book| %>
  <tbody>
   <tr>
-   <td class="a"><%= book.title %></td>
+   <td class="a"><%= link_to "Title", "/books/#{book.id}" %></td>
    <td class="b"><%= book.body %></td>
-   <td><%= link_to "Destroy", book_path(book.id), method: :delete %></td>
   </tr>
  </tbody>
 
