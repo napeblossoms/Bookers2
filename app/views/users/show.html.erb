@@ -18,7 +18,6 @@
 <% end %>
 
 <h1>Books</h1>
-
 <table>
  <thead>
   <tr>
@@ -30,7 +29,7 @@
  <% @books.each do |book| %>
  <tbody>
   <tr>
-   <td class="a"><%= link_to "Title", "/books/#{book.id}" %></td>
+   <td class="a"><%= link_to book.title, "/books/#{book.id}" %></td>
    <td class="b"><%= book.body %></td>
   </tr>
  </tbody>

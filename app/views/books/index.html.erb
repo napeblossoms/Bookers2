@@ -3,15 +3,16 @@
 <table>
  <thead>
   <tr>
+   <th></th>
    <th>Title</th>
    <th>Opinion</th>
-   <th></th>
   </tr>
  </thead>
  <% @books.each do |book| %>
  <tbody>
   <tr>
-   <td class="a"><%= link_to "Title", "/books/#{book.id}" %></td>
+   <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+   <td class="a"><%= link_to book.title, "/books/#{book.id}" %></td>
    <td class="b"><%= book.body %></td>
   </tr>
  </tbody>

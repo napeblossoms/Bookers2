@@ -1,15 +1,9 @@
 <h1>Books detail</h1>
 <table>
- <thead>
-  <tr>
-   <th>Title</th>
-   <th>Opinion</th>
-   <th></th>
-  </tr>
- </thead>
 
  <tbody>
   <tr>
+   <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
    <td class="a"><%= @book.title %></td>
    <td class="b"><%= @book.body %></td>
    <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
