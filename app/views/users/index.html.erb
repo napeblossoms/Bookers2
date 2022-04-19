@@ -1,22 +1,23 @@
 <%= render 'books/list', book: @book %>
 
-<h1>Users</h1>
-<table>
- <thead>
-  <tr>
-   <th>image</th>
-   <th>name</th>
-   <th></th>
-  </tr>
- </thead>
-  <tbody>
- <% @users.each do |user| %>
-  <tr>
-  <td><%= image_tag user.get_profile_image(100,100) %></td>
-  <td>name <%= user.name %></td>
-  <td><%= link_to "show", user_path(user) %></td>
-  </tr>
+<div class="col-md-8 offset-md-1">
+        <h2>Users</h2>
+        <table class="table">
+          <thead>
+           <tr>
+            <th>image</th>
+            <th>name</th>
+            <th colspan="3"></th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr><% @users.each do |user| %>
+            <td><%= image_tag user.get_profile_image(100,100) %></td>
+            <td>name <%= user.name %></td>
+            <td><%= link_to "show", user_path(user) %></td>
+           </tr>
+           <% end %>
+          </tbody>
+        </table>
+      </div>
 
-<% end %>
-</tbody>
-</table>
