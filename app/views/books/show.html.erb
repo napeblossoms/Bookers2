@@ -4,10 +4,12 @@
   <table class="table">
     <tbody>
       <tr>
-        <td><a href="/users/#{user.id}">
+        <td>
+        <%= link_to user_path(@book.user) do %>
         <%= image_tag @book.user.get_profile_image(100,100) %></br>
         <%= @book.user.name %>
-        </a>
+        <% end %>
+
         </td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
@@ -25,4 +27,3 @@
     </tbody>
   </table>
 </div>
-
