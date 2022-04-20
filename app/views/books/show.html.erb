@@ -5,13 +5,24 @@
     <tbody>
       <tr>
         <td><a href="/users/#{user.id}">
-        <%= image_tag @book.user.get_profile_image(100,100) %></a>
+        <%= image_tag @book.user.get_profile_image(100,100) %></br>
+        <%= @book.user.name %>
+        </a>
         </td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
-        <td><%= link_to "Edit", edit_book_path(@book),class:"btn btn-sm btn-success" %></td>
-        <td><%= link_to "Destroy", book_path(@book),method: :delete,class:"btn btn-sm btn-danger" %></td>
+        <td>
+          <% if @book.user == current_user %>
+          <%= link_to "Edit", edit_book_path(@book),class:"btn btn-sm btn-success" %>
+          <% end %>
+        </td>
+        <td>
+          <% if @book.user == current_user %>
+          <%= link_to "Destroy", book_path(@book),method: :delete,"data-confirm" => "Are you sure?",class:"btn btn-sm btn-danger" %>
+          <% end %>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+
